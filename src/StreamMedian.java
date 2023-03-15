@@ -19,7 +19,7 @@ public class StreamMedian {
     }
 
     /**
-     * 2 param constructor for StreamMedian, here to allow use of your own Priority Queues.
+     * 2 param constructor for StreamMedian. It is here to allow use of your own Priority Queues.
      * @param bigger The Priority queue for larger values.
      * @param smaller The priority queue for lower values.
      */
@@ -29,8 +29,9 @@ public class StreamMedian {
     }
 
     /**
-     * insert takes in any Integer value, then adds it to the correct heap depending on previously inserted values.
-     * Smaller will always contain the odd numbered digit, otherwise they will be of equal size.
+     * Insert takes in any Integer value, then adds it to the correct heap depending on previously inserted values.
+     * Then it corrects for size differential, if needed.
+     * Smaller will always contain the odd-numbered digit, otherwise they will be of equal size.
      * @param i Integer to be inserted
      */
     public void insert(Integer i){
@@ -51,7 +52,7 @@ public class StreamMedian {
     }
 
     /**
-     * returns the median value of heaps.
+     * Returns the median value of heaps.
      * @return The median value of the heaps.
      */
     public double getMedian(){
