@@ -139,7 +139,7 @@ public class WordLadder {
                 if(neighbor.path.isEmpty()){
                     neighbor.path.addAll(current.path);
                     neighbor.path.add(current);
-                } else if (neighbor.path.size() > current.path.size()){
+                } else if (neighbor.path.size() > current.path.size() + 1){
                     neighbor.path.clear();
                     neighbor.path.addAll(current.path);
                     neighbor.path.add(current);
