@@ -123,12 +123,12 @@ public class WordLadder {
         Queue<WordNode> queue = new LinkedList<WordNode>();
         queue.add(wordlist.get(start));
         List<String> visited = new ArrayList<String>();
+        visited.add(start);
 
         while(!queue.isEmpty()){
             WordNode current = queue.remove();
             if(current.word.equals(end)){
                 System.out.println("Path: ");
-                current.path.remove(0);
                 for(WordNode node : current.path){
                     System.out.print(node.word + "->");
                 }
@@ -170,7 +170,7 @@ public class WordLadder {
             for(int j = 0; j < 26; j++) {
                 String word = str.substring(0, i) + (char)('a' + j) + str.substring(i + 1);
                 // if the word is in the dictionary, add it to the list of neighbors
-                if(wordlist.containsKey(word)) {
+                if(wordlist.containsKey(word) && !word.equals(str)) {
                     neighbors.add(wordlist.get(word));
                 }
             }
